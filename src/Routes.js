@@ -4,6 +4,8 @@ import { Protected } from "./layouts";
 import { WithProtectedRoute } from "./routers";
 
 import Home from "./pages/Home";
+import Campaigns from "./pages/Campaigns";
+import Blogs from "./pages/Blogs";
 
 const Routes = () => {
   return (
@@ -14,6 +16,18 @@ const Routes = () => {
           path="/"
           layout={Protected}
           component={Home}
+        />
+        <WithProtectedRoute
+          exact
+          path="/campaigns"
+          layout={Protected}
+          component={Campaigns}
+        />
+        <WithProtectedRoute
+          exact
+          path="/blogs"
+          layout={Protected}
+          component={Blogs}
         />
       </Switch>
     </Router>
